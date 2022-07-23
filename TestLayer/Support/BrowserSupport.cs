@@ -2,12 +2,13 @@
 
 namespace TestLayer.Support
 {
+    [Binding]
     internal class BrowserSupport
     {
-        [AfterFeature("browser")]
+        [AfterScenario("browser")]
         public void CloseBrowser()
         {
-            SingleDriver.GetDriver().Close();
+            SingleDriver.Close();
         }
     }
 }
