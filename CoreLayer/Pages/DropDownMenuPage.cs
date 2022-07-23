@@ -1,14 +1,20 @@
-﻿namespace CoreLayer.Pages
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+
+namespace CoreLayer.Pages
 {
     public class DropDownMenuPage : BasePage
     {
-        const string Url = "";
-        public DropDownMenuPage() : base(Url) 
-        {
-            throw new NotImplementedException();
-        }
+        private const string URL 
+            = "https://www.globalsqa.com/demo-site/select-dropdown-menu/";
+
+        public DropDownMenuPage() : base(URL) { }
+
+        private SelectElement DropDownMenu
+            => new(Driver.WaitForElementToAppear(
+                By.XPath("//select")));
 
         public int GetNumberOfOptions()
-            => throw new NotImplementedException();
+            => DropDownMenu.Options.Count;
     }
 }
