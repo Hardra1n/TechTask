@@ -8,7 +8,7 @@ namespace TestLayer.StepDefinitions
     {
         private BasePage _page;
 
-        object result;
+        private object result;
 
         [Given(@"Browser is on the DDM page")]
         public void BrowserIsOnTheDDMPage()

@@ -21,7 +21,6 @@ namespace CoreLayer
         {
             _driver?.Close();
         }
-
         private static void ConfigureDriver()
         {
             _driver.Manage().Window.FullScreen();
