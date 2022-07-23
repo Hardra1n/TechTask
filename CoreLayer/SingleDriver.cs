@@ -11,15 +11,21 @@ namespace CoreLayer
         {
             if (_driver == null)
             {
-                _driver = new ChromeDriver();
+                _driver = new ChromeDriver(Utils.GetDriverDirectory());
                 ConfigureDriver();
             }
             return _driver;
+        }
+
+        public static void Close()
+        {
+            _driver?.Close();
         }
 
         private static void ConfigureDriver()
         {
             _driver.Manage().Window.FullScreen();
         }
+
     }
 }
