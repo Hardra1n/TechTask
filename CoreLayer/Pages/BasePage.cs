@@ -2,7 +2,7 @@
 
 namespace CoreLayer.Pages
 {
-    abstract class BasePage
+    public abstract class BasePage
     {
         public BasePage(string url)
         {
